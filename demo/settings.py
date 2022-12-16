@@ -1,4 +1,3 @@
-###
 SECRET_KEY = 'key'
 DEBUG = True
 ALLOWED_HOSTS =[]
@@ -11,3 +10,36 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+]
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True, # must be enabled to request to admin page
+        'OPTIONS': {
+            'context_processors': [
+                # 'django.template.context_processors.debug',
+                # 'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ]
+        }
+    }
+]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+    }
+}
+
+STATIC_URL = 'static/'
+
+WSGI_APPLICATION = 'wsgi.application'
+ROOT_URLCONF = 'urls'

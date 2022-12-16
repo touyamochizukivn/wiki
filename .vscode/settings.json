@@ -12,5 +12,8 @@
     "hide-files.files": [
         "**/__pycache__",
         "**/__init__.py"
-    ]
+    ],
+    // "python.analysis.extraPaths": [
+    //     "./demo/apps"
+    // ]
 }

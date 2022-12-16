@@ -1,3 +1,6 @@
+import os, sys
+from pathlib import Path
+
 SECRET_KEY = 'key'
 DEBUG = True
 ALLOWED_HOSTS =[]
@@ -9,7 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ts',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -21,7 +24,7 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'APP_DIRS': True, # must be enabled to request to admin page
+        'APP_DIRS': True, # Must be enabled to request to admin page
         # 'DIRS': [],
         'OPTIONS': {
             'context_processors': [
@@ -44,4 +47,9 @@ DATABASES = {
 STATIC_URL = 'static/'
 
 WSGI_APPLICATION = 'wsgi.application'
-ROOT_URLCONF = 'urls'
+
+ROOT_URLCONF = 'urls' # Project url root
+
+sys.path.insert(0, os.path.join(Path(__file__).resolve().parent, 'apps')) # Change Project root
+
+SILENCED_SYSTEM_CHECKS = ["admin.W411"] # Turn off warning messages

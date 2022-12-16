@@ -124,4 +124,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 """ Advance settings """
-
+import os, sys
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps')) # Change Project root

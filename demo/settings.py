@@ -9,6 +9,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ts',
 ]
 
 MIDDLEWARE = [
@@ -21,6 +22,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True, # must be enabled to request to admin page
+        # 'DIRS': [],
         'OPTIONS': {
             'context_processors': [
                 # 'django.template.context_processors.debug',
